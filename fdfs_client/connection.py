@@ -103,7 +103,7 @@ class ConnectionPool(object):
         '''Create a new connection.'''
         if self._conns_created >= self.max_conn:
             raise ConnectionError('[-] Error: Too many connections.')
-        num_try = 10
+        num_try = 3
         while True:
             try:
                 if num_try <= 0:
